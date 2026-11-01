@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xeron Studios — Graphic Design Studio</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 48 48%27%3E%3Crect width=%2748%27 height=%2748%27 rx=%2711%27 fill=%27%23ff5a00%27/%3E%3Cpath d=%27M35 13L13 35%27 stroke=%27%230a0a0a%27 stroke-width=%277%27 stroke-linecap=%27square%27/%3E%3Cpath d=%27M13 13L35 35%27 stroke=%27%23ff5a00%27 stroke-width=%2715%27/%3E%3Cpath d=%27M14 14L34 34%27 stroke=%27%230a0a0a%27 stroke-width=%277%27 stroke-linecap=%27square%27/%3E%3C/svg%3E">
+<meta name="description" content="Xeron Studios is a graphic design studio working in branding, posters, packaging and social media design.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#ff5a00; --blue-d:#cc4800; --paper:#f4f3f1; --ink:#0a0a0a; --pink:#ff9a4d; --sun:#ffd2ad; --white:#fff;
+  --display:"Bricolage Grotesque","Arial Black",Arial,sans-serif;
+  --body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --pad:clamp(20px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px;-webkit-text-size-adjust:100%}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);line-height:1.02;letter-spacing:-.02em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 var(--pad)}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:var(--ink);color:var(--white)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display)}
+.mark{width:38px;height:38px;flex:none}
+.wm{display:grid;line-height:1}
+.wm b{font-weight:800;font-size:1.3rem;letter-spacing:.06em}
+.wm i{font-style:normal;font-weight:500;font-size:.62rem;letter-spacing:.42em;color:var(--blue);margin-top:4px}
+nav{display:flex;gap:6px;align-items:center}
+nav a{text-decoration:none;font-weight:500;font-size:.95rem;padding:8px 14px;border-radius:99px}
+nav a:hover{background:rgba(255,255,255,.16)}
+nav a.cta{background:var(--blue);color:var(--ink);font-weight:600}
+nav a.cta:hover{background:var(--white)}
+@media(max-width:640px){nav a:not(.cta){display:none}}
+
+/* hero */
+.hero{background:var(--blue);color:var(--ink);overflow:hidden;position:relative}
+.hero .wrap{padding-top:clamp(40px,8vw,96px);padding-bottom:clamp(56px,9vw,110px);display:grid;gap:40px;grid-template-columns:1.25fr .75fr;align-items:end}
+.hero h1{font-size:clamp(3.2rem,11vw,8rem);font-weight:800;letter-spacing:-.04em;line-height:.9}
+.hero h1 span{display:block;font-size:.36em;font-weight:500;letter-spacing:-.02em;line-height:1.1;margin-top:.5em;max-width:16em}
+.hero p{max-width:30em;font-size:1.08rem;opacity:.92;margin-top:20px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;font:600 1rem var(--body);text-decoration:none;padding:14px 26px;border-radius:99px;border:2px solid var(--white);cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.fill{background:var(--ink);border-color:var(--ink);color:var(--white)}
+.btn.ghost{background:transparent;border-color:var(--ink);color:var(--ink)}
+.btn.sun{background:var(--ink);border-color:var(--ink);color:var(--white)}
+.btn.line{background:transparent;border-color:var(--ink);color:var(--ink)}
+.shapes{width:100%;max-width:380px;justify-self:end;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(24px) rotate(-3deg)}to{opacity:1;transform:none}}
+@media(max-width:820px){.hero .wrap{grid-template-columns:1fr}.shapes{max-width:260px;justify-self:start;order:-1}}
+
+/* sections */
+section{padding:clamp(56px,9vw,112px) 0}
+.sec-head{display:flex;flex-wrap:wrap;gap:12px 40px;justify-content:space-between;align-items:end;margin-bottom:clamp(28px,5vw,52px)}
+.sec-head h2{font-size:clamp(2.2rem,6vw,4.2rem);font-weight:800}
+.sec-head p{max-width:26em;opacity:.8}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,80px);align-items:start}
+.about .lead{font-family:var(--display);font-size:clamp(1.5rem,3.4vw,2.3rem);line-height:1.18;font-weight:700;letter-spacing:-.02em}
+.about p+p{margin-top:16px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+.facts div{background:var(--white);border-radius:16px;padding:16px}
+.facts b{display:block;font:800 2rem/1 var(--display)}
+.facts small{font-size:.82rem;opacity:.75}
+.owner{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,4vw,40px);background:var(--white);border-radius:24px;padding:clamp(22px,4vw,40px);margin-top:8px}
+.avatar{width:clamp(84px,14vw,150px);aspect-ratio:1;border-radius:50%;background:var(--ink);color:var(--blue);display:grid;place-items:center;font:800 clamp(2rem,5vw,3.6rem) var(--display);letter-spacing:-.02em}
+.owner h3{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800}
+.owner .role{font-weight:600;color:var(--blue-d);margin-bottom:10px}
+.owner ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 20px}
+.owner li{font-size:.85rem;font-weight:500;background:var(--paper);border-radius:99px;padding:5px 14px}
+@media(max-width:760px){.about{grid-template-columns:1fr}.owner{grid-template-columns:1fr}}
+
+/* services */
+.services{background:var(--ink);color:var(--white)}
+.svc-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.svc{border-radius:24px;padding:clamp(22px,3vw,34px);display:flex;flex-direction:column;gap:10px;min-height:230px}
+.svc h3{font-size:1.7rem;font-weight:700}
+.svc p{max-width:28em;font-size:.98rem}
+.svc ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:14px}
+.svc li{font-size:.82rem;font-weight:500;border:1.5px solid currentColor;border-radius:99px;padding:3px 12px}
+.svc:nth-child(1){background:var(--blue);color:var(--ink)}
+.svc:nth-child(2){background:var(--sun);color:var(--ink)}
+.svc:nth-child(3){background:var(--pink);color:var(--ink)}
+.svc:nth-child(4){background:var(--paper);color:var(--ink)}
+@media(max-width:700px){.svc-list{grid-template-columns:1fr}.svc{min-height:0}}
+
+/* work */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,28px)}
+.card{display:block}
+.card .art{border-radius:20px;overflow:hidden;aspect-ratio:4/3;background:var(--white);transition:transform .25s}
+.card:hover .art{transform:translateY(-6px)}
+.card .art svg{width:100%;height:100%}
+.card h3{font-size:1.3rem;font-weight:700;margin-top:14px;letter-spacing:-.01em}
+.card p{font-size:.92rem;opacity:.75}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}}
+
+/* pricing */
+.pricing{background:var(--white)}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
+.plan{background:var(--paper);border-radius:24px;padding:clamp(22px,3vw,34px);display:flex;flex-direction:column;gap:12px}
+.plan h3{font-size:1.5rem;font-weight:700}
+.plan .price{font:800 clamp(2.4rem,5vw,3.2rem)/1 var(--display);letter-spacing:-.03em}
+.plan .price small{font:500 .95rem var(--body);opacity:.7;letter-spacing:0}
+.plan ul{list-style:none;display:grid;gap:8px;margin:6px 0 18px;font-size:.96rem}
+.plan li{padding-left:24px;position:relative}
+.plan li::before{content:"";position:absolute;left:0;top:.5em;width:12px;height:7px;border-left:3px solid var(--blue);border-bottom:3px solid var(--blue);transform:rotate(-45deg)}
+.plan .btn{margin-top:auto;text-align:center}
+.plan.best{background:var(--ink);color:var(--white)}
+.plan.best .btn{background:var(--blue);border-color:var(--blue);color:var(--ink)}
+.tag{align-self:flex-start;background:var(--blue);color:var(--ink);font-size:.8rem;font-weight:600;padding:3px 12px;border-radius:99px}
+.price-note{margin-top:22px;font-size:.92rem;opacity:.75}
+@media(max-width:860px){.plans{grid-template-columns:1fr}}
+
+/* contact */
+.contact{background:var(--blue);color:var(--ink)}
+.contact .box{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,80px)}
+.contact h2{font-size:clamp(2.4rem,7vw,5rem);font-weight:800}
+.contact .mail{display:inline-block;margin-top:22px;font:700 clamp(1.1rem,3vw,1.6rem) var(--display);text-underline-offset:6px}
+.contact ul{list-style:none;margin-top:22px;display:flex;gap:10px;flex-wrap:wrap}
+.contact ul a{display:inline-block;padding:8px 18px;border:2px solid var(--ink);border-radius:99px;text-decoration:none;font-weight:500;font-size:.95rem}
+.contact ul a:hover{background:var(--ink);color:var(--white)}
+form{display:grid;gap:14px}
+label{font-weight:600;font-size:.92rem;display:grid;gap:6px}
+input,textarea{font:inherit;color:var(--ink);background:var(--white);border:2px solid transparent;border-radius:14px;padding:13px 16px;width:100%}
+textarea{min-height:130px;resize:vertical}
+input:focus,textarea:focus{outline:3px solid var(--ink);outline-offset:0}
+.note{font-size:.88rem;min-height:1.4em}
+@media(max-width:760px){.contact .box{grid-template-columns:1fr}}
+
+footer{background:var(--ink);color:rgba(255,255,255,.7);padding:22px 0;font-size:.88rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Xeron Studios, home"><svg class="mark" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="11" fill="#ff5a00"/><path d="M35 13L13 35" stroke="#0a0a0a" stroke-width="7" stroke-linecap="square"/><path d="M13 13L35 35" stroke="#ff5a00" stroke-width="15" stroke-linecap="butt"/><path d="M14 14L34 34" stroke="#0a0a0a" stroke-width="7" stroke-linecap="square"/></svg><span class="wm"><b>XERON</b><i>STUDIOS</i></span></a>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#pricing">Pricing</a>
+      <a class="cta" href="#contact">Hire me</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Xeron<br>Studios<span>A graphic design studio making brands people remember.</span></h1>
+      <p>We design logos, posters, packaging and social media visuals for businesses and events that want to look clear, confident and a little bit unforgettable.</p>
+      <div class="hero-actions">
+        <a class="btn fill" href="#work">See our work</a>
+        <a class="btn ghost" href="#contact">Start a project</a>
+      </div>
+    </div>
+    <svg class="shapes" viewBox="0 0 300 300" role="img" aria-label="Abstract shapes made of a circle, a square and a triangle">
+      <rect x="20" y="40" width="150" height="150" rx="10" fill="#ffffff"/>
+      <circle cx="190" cy="120" r="85" fill="#0a0a0a"/>
+      <path d="M60 270 L150 130 L240 270 Z" fill="#ffffff"/>
+      <circle cx="150" cy="215" r="22" fill="#ff5a00"/>
+    </svg>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap about">
+    <p class="lead">Good design is not decoration. It makes a message easy to understand and hard to forget.</p>
+    <div>
+      <p>Xeron Studios is a graphic design studio based in Dhaka, Bangladesh. We work with startups, shops, creators and event teams to turn rough ideas into visuals that feel finished.</p>
+      <p>Our process is simple: we talk, we sketch, you give feedback, and we polish. You get clean files that are ready to print or post.</p>
+      <div class="facts">
+        <div><b>5+</b><small>years designing</small></div>
+        <div><b>80+</b><small>projects delivered</small></div>
+        <div><b>40+</b><small>happy clients</small></div>
+      </div>
+    </div>
+    <aside class="owner" aria-label="About the owner">
+      <div class="avatar" aria-hidden="true">NI</div>
+      <div>
+        <h3>Nafis Iqbal</h3>
+        <p class="role">Founder and Creative Director</p>
+        <p>Nafis started Xeron Studios to help small businesses look as good as the big ones. He leads every project from first sketch to final files, and works directly with each client.</p>
+        <ul>
+          <li>Based in Dhaka, Bangladesh</li>
+          <li>Branding and logo design</li>
+          <li>Packaging and print</li>
+          <li>Social media design</li>
+        </ul>
+        <a class="btn line" href="#contact">Talk to Nafis</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section id="services" class="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>What we can do for you</h2>
+      <p>Four services, one consistent look across everything you put in front of customers.</p>
+    </div>
+    <div class="svc-list">
+      <article class="svc">
+        <h3>Logo and brand identity</h3>
+        <p>A logo, colors, fonts and simple rules so your brand looks the same everywhere.</p>
+        <ul><li>Logo</li><li>Color palette</li><li>Brand guide</li></ul>
+      </article>
+      <article class="svc">
+        <h3>Posters and print</h3>
+        <p>Posters, flyers, banners, brochures and menus designed to be read from across the room.</p>
+        <ul><li>Posters</li><li>Flyers</li><li>Brochures</li></ul>
+      </article>
+      <article class="svc">
+        <h3>Packaging design</h3>
+        <p>Labels, boxes and pouches that stand out on the shelf and tell people what is inside.</p>
+        <ul><li>Labels</li><li>Boxes</li><li>Stickers</li></ul>
+      </article>
+      <article class="svc">
+        <h3>Social media design</h3>
+        <p>Post templates, covers and ad creatives that keep your feed tidy and easy to recognize.</p>
+        <ul><li>Post templates</li><li>Covers</li><li>Ad creatives</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Selected work</h2>
+      <p>Six recent projects. Sample concepts shown here; replace them with your real images.</p>
+    </div>
+    <div class="grid">
+
+      <a class="card" href="#contact" aria-label="Kopi Lane, coffee brand identity">
+        <div class="art"><svg viewBox="0 0 400 300" role="img" aria-label="Coffee brand logo with a cup shape on a brown background">
+          <rect width="400" height="300" fill="#0a0a0a"/><circle cx="200" cy="140" r="86" fill="#ff5a00"/>
+          <path d="M150 120h100v34a50 50 0 0 1-100 0z" fill="#0a0a0a"/><path d="M250 128h14a16 16 0 0 1 0 32h-18" fill="none" stroke="#0a0a0a" stroke-width="9"/>
+          <path d="M180 104c-8-12 8-16 0-28M205 104c-8-12 8-16 0-28" fill="none" stroke="#0a0a0a" stroke-width="6" stroke-linecap="round"/>
+          <text x="200" y="266" text-anchor="middle" font-family="Arial Black,Arial" font-size="26" fill="#ff5a00" letter-spacing="3">KOPI LANE</text></svg></div>
+        <h3>Kopi Lane</h3><p>Coffee shop brand identity</p>
+      </a>
+
+      <a class="card" href="#contact" aria-label="Monsoon Fest, event poster">
+        <div class="art"><svg viewBox="0 0 400 300" role="img" aria-label="Music festival poster with wave stripes and a sun">
+          <rect width="400" height="300" fill="#ff9a4d"/><circle cx="270" cy="95" r="52" fill="#ffd2ad"/>
+          <g fill="none" stroke="#ff5a00" stroke-width="14"><path d="M-10 170q50-34 100 0t100 0 100 0 100 0"/><path d="M-10 205q50-34 100 0t100 0 100 0 100 0"/><path d="M-10 240q50-34 100 0t100 0 100 0 100 0"/></g>
+          <text x="28" y="72" font-family="Arial Black,Arial" font-size="44" fill="#0a0a0a">MONSOON</text><text x="28" y="116" font-family="Arial Black,Arial" font-size="44" fill="#0a0a0a">FEST</text></svg></div>
+        <h3>Monsoon Fest</h3><p>Music festival poster</p>
+      </a>
+
+      <a class="card" href="#contact" aria-label="Haat Tea, packaging design">
+        <div class="art"><svg viewBox="0 0 400 300" role="img" aria-label="Green tea box packaging with leaf pattern">
+          <rect width="400" height="300" fill="#f4f3f1"/><rect x="130" y="40" width="140" height="220" rx="8" fill="#0a0a0a"/>
+          <rect x="130" y="40" width="140" height="30" fill="#2a2a2a"/>
+          <path d="M200 105c40 10 48 50 0 80-48-30-40-70 0-80z" fill="#ff5a00"/><path d="M200 112v68" stroke="#0a0a0a" stroke-width="4"/>
+          <text x="200" y="218" text-anchor="middle" font-family="Arial Black,Arial" font-size="19" fill="#f4f3f1" letter-spacing="2">HAAT TEA</text>
+          <text x="200" y="238" text-anchor="middle" font-family="Arial" font-size="10" fill="#ff5a00" letter-spacing="3">SYLHET GREEN</text></svg></div>
+        <h3>Haat Tea</h3><p>Packaging design</p>
+      </a>
+
+      <a class="card" href="#contact" aria-label="Tarang Fitness, social media kit">
+        <div class="art"><svg viewBox="0 0 400 300" role="img" aria-label="Three social media post tiles for a fitness brand">
+          <rect width="400" height="300" fill="#f4f3f1"/>
+          <rect x="30" y="50" width="110" height="110" rx="12" fill="#ff5a00"/><circle cx="85" cy="105" r="30" fill="#ffd2ad"/>
+          <rect x="145" y="140" width="110" height="110" rx="12" fill="#0a0a0a"/><path d="M165 220l35-50 35 50z" fill="#ff9a4d"/>
+          <rect x="260" y="50" width="110" height="110" rx="12" fill="#ff9a4d"/><rect x="290" y="80" width="50" height="50" fill="#0a0a0a" transform="rotate(14 315 105)"/>
+          <text x="30" y="220" font-family="Arial Black,Arial" font-size="22" fill="#0a0a0a">TARANG</text><text x="30" y="242" font-family="Arial Black,Arial" font-size="22" fill="#ff5a00">FITNESS</text></svg></div>
+        <h3>Tarang Fitness</h3><p>Social media kit</p>
+      </a>
+
+      <a class="card" href="#contact" aria-label="Nodir Gaan, book cover">
+        <div class="art"><svg viewBox="0 0 400 300" role="img" aria-label="Book cover with a river and a moon">
+          <rect width="400" height="300" fill="#f4f3f1"/><rect x="125" y="22" width="150" height="256" fill="#0a0a0a"/>
+          <circle cx="200" cy="95" r="30" fill="#ff5a00"/>
+          <g fill="none" stroke="#ff5a00" stroke-width="5" stroke-linecap="round"><path d="M138 160q31-16 62 0t62 0"/><path d="M138 180q31-16 62 0t62 0"/><path d="M138 200q31-16 62 0t62 0"/></g>
+          <text x="200" y="244" text-anchor="middle" font-family="Georgia,serif" font-size="20" fill="#ff5a00">Nodir Gaan</text>
+          <text x="200" y="262" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#ff5a00" opacity=".8">a novel</text></svg></div>
+        <h3>Nodir Gaan</h3><p>Book cover design</p>
+      </a>
+
+      <a class="card" href="#contact" aria-label="Orbit Studio, logo system">
+        <div class="art"><svg viewBox="0 0 400 300" role="img" aria-label="Logo system showing an orbit mark in three color versions">
+          <rect width="400" height="300" fill="#ffd2ad"/>
+          <g fill="none" stroke-width="9">
+            <g transform="translate(95 100)"><circle r="38" stroke="#0a0a0a"/><circle cx="26" cy="-26" r="10" fill="#0a0a0a" stroke="none"/></g>
+            <g transform="translate(205 100)"><rect x="-50" y="-50" width="100" height="100" rx="18" fill="#0a0a0a" stroke="none"/><circle r="30" stroke="#ffd2ad"/><circle cx="21" cy="-21" r="8" fill="#ff9a4d" stroke="none"/></g>
+            <g transform="translate(315 100)"><rect x="-50" y="-50" width="100" height="100" rx="18" fill="#ff5a00" stroke="none"/><circle r="30" stroke="#fff"/><circle cx="21" cy="-21" r="8" fill="#fff" stroke="none"/></g>
+          </g>
+          <text x="200" y="228" text-anchor="middle" font-family="Arial Black,Arial" font-size="38" fill="#0a0a0a" letter-spacing="2">ORBIT</text>
+          <text x="200" y="256" text-anchor="middle" font-family="Arial" font-size="14" fill="#0a0a0a" letter-spacing="6">STUDIO</text></svg></div>
+        <h3>Orbit Studio</h3><p>Logo system</p>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section id="pricing" class="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Simple pricing</h2>
+      <p>Clear packages with no hidden costs. Need something different? Ask for a custom quote.</p>
+    </div>
+    <div class="plans">
+      <article class="plan">
+        <h3>Starter</h3>
+        <div class="price">$120</div>
+        <p>A logo or a single design, ready to use.</p>
+        <ul><li>2 logo concepts</li><li>2 rounds of changes</li><li>PNG, JPG and PDF files</li><li>Delivery in 5 days</li></ul>
+        <a class="btn line" href="#contact">Choose Starter</a>
+      </article>
+      <article class="plan best">
+        <span class="tag">Most popular</span>
+        <h3>Brand</h3>
+        <div class="price">$350</div>
+        <p>A full identity for a new or growing business.</p>
+        <ul><li>Logo with 3 concepts</li><li>Colors and fonts</li><li>Brand guide (PDF)</li><li>Business card and social profile</li><li>Source files included</li></ul>
+        <a class="btn" href="#contact">Choose Brand</a>
+      </article>
+      <article class="plan">
+        <h3>Monthly</h3>
+        <div class="price">$600 <small>/ month</small></div>
+        <p>Ongoing design for brands that post often.</p>
+        <ul><li>12 social media posts</li><li>2 posters or flyers</li><li>Unlimited small edits</li><li>Priority replies</li></ul>
+        <a class="btn line" href="#contact">Choose Monthly</a>
+      </article>
+    </div>
+    <p class="price-note">Prices are in US dollars. Packaging and large print projects are quoted individually.</p>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap box">
+    <div>
+      <h2>Let's make something good.</h2>
+      <p style="margin-top:18px;max-width:26em">Tell us about your project, your timeline and your budget. We reply within one working day.</p>
+      <a class="mail" href="mailto:hello@xeronstudios.com">hello@xeronstudios.com</a>
+      <ul>
+        <li><a href="https://www.behance.net/" rel="noopener">Behance</a></li>
+        <li><a href="https://dribbble.com/" rel="noopener">Dribbble</a></li>
+        <li><a href="https://www.instagram.com/" rel="noopener">Instagram</a></li>
+      </ul>
+    </div>
+    <form id="form" novalidate>
+      <label>Your name<input name="name" autocomplete="name" required></label>
+      <label>Your email<input name="email" type="email" autocomplete="email" required></label>
+      <label>About your project<textarea name="msg" required></textarea></label>
+      <button class="btn sun" type="submit">Send message</button>
+      <p class="note" id="note" role="status"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© <span id="yr">2026</span> Xeron Studios. All rights reserved.</span><span>Designed in Dhaka</span></div></footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+var f = document.getElementById('form'), note = document.getElementById('note');
+f.addEventListener('submit', function(e){
+  e.preventDefault();
+  var d = new FormData(f), n = (d.get('name')||'').trim(), em = (d.get('email')||'').trim(), m = (d.get('msg')||'').trim();
+  if(!n || !/^\S+@\S+\.\S+$/.test(em) || !m){ note.textContent = 'Please fill in your name, a valid email and a message.'; return; }
+  note.textContent = 'Opening your email app to send the message.';
+  location.href = 'mailto:hello@xeronstudios.com?subject=' + encodeURIComponent('Project enquiry from ' + n) +
+    '&body=' + encodeURIComponent(m + '\n\n' + n + '\n' + em);
+});
+</script>
+</body>
+</html>
